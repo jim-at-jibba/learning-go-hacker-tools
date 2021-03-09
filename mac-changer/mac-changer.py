@@ -1,10 +1,18 @@
 #!/usr/bin/env python
 
 import subprocess
+import optparse
 
-interface = input("What is the interface?")
-new_mac = input("What is the new MAC")
+parser = optparse.OptionParser()
+parser.add_option("-i", "--interface", dest="interface",
+                  help="Interface to change its MAC address")
+parser.add_option("-m", "--new_nac", dest="new_mac",
+                  help="New MAC address")
 
+(options, arguments) = parser.parse_args()
+
+interface = options.interface
+new_mac = options.new_mac
 print(f"[+] Changing MAC address for {interface} to {new_mac}")
 
 # subprocess.call(f"ifconfig {interface} down", shell=True)
