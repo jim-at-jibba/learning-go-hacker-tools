@@ -1,4 +1,4 @@
-# Learning Python by building hacker tools
+# Learning Python and Go by building hacker tools
 
 ![Hacker](./assets/hacker.jpg)
 
