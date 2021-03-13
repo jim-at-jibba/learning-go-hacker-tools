@@ -11,12 +11,14 @@ func main() {
 
 func run() {
 	IP := "scanme.nmap.org"
-	Port := "80"
 
-	address := IP + ":" + Port
-	connection, err := net.Dial("tcp", address)
+	for i := 1; i < 100; i++ {
+		address := fmt.Sprintf(IP+":%d", i)
+		connection, err := net.Dial("tcp", address)
 
-	if err == nil {
-		fmt.Println("[+] Connection established...", connection.RemoteAddr().String())
+		if err == nil {
+			fmt.Printf("[+] Connection established...PORT %v - IP: %v\n", i, connection.RemoteAddr().String())
+		}
 	}
+
 }
