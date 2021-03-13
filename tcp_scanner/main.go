@@ -24,7 +24,6 @@ func ScanPort(port int, wg *sync.WaitGroup) {
 }
 func run() {
 
-	// wg = waitgroup
 	// waitgroups help us keep the main function from
 	//  closing before our go routines
 	// have finihsed
